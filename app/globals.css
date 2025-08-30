@@ -1,0 +1,236 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: #ffffff;
+  --foreground: #1f2937; /* dark gray */
+
+  --card: #f3f4f6; /* light gray cards */
+  --card-foreground: #1f2937;
+
+  --popover: #ffffff;
+  --popover-foreground: #1f2937;
+
+  --primary: #1e3a8a; /* blue-800 */
+  --primary-foreground: #ffffff;
+
+  --secondary: #f3f4f6; /* neutral gray */
+  --secondary-foreground: #1f2937;
+
+  --muted: #f3f4f6;
+  --muted-foreground: #1f2937;
+
+  --accent: #059669; /* emerald-600 */
+  --accent-foreground: #ffffff;
+
+  --destructive: #dc2626; /* red-600 */
+  --destructive-foreground: #ffffff;
+
+  --border: #e5e7eb; /* gray-200 */
+  --input: #ffffff;
+  --ring: rgba(30, 58, 138, 0.5); /* primary ring */
+
+  /* Charts (kept simple but aligned with palette) */
+  --chart-1: #1e3a8a;
+  --chart-2: #059669;
+  --chart-3: #dc2626;
+  --chart-4: #f59e0b;
+  --chart-5: #3b82f6;
+
+  --radius: 0.5rem;
+
+  /* Sidebar */
+  --sidebar: #ffffff;
+  --sidebar-foreground: #1f2937;
+  --sidebar-primary: #1e3a8a;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #059669;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #e5e7eb;
+  --sidebar-ring: rgba(30, 58, 138, 0.5);
+
+  /* Backdrop utilities */
+  --grid-dot: rgba(31, 41, 55, 0.08); /* gray-800 at low alpha for light */
+  --glass-bg: rgba(255, 255, 255, 0.6); /* frosted light */
+  --glass-border: rgba(229, 231, 235, 0.6); /* gray-200 */
+
+  /* Neumorphic variables for light/dark */
+  --neo-bg: #e9edf2; /* soft light base */
+  --neo-shadow-hi: #ffffff; /* top-left soft highlight */
+  --neo-shadow-lo: rgba(0, 0, 0, 0.08); /* bottom-right soft shadow */
+  --neo-inner-hi: rgba(255, 255, 255, 0.9);
+  --neo-inner-lo: rgba(0, 0, 0, 0.12);
+}
+
+.dark {
+  /* Dark mode */
+  --background: #1f2937; /* gray-800 */
+  --foreground: #ffffff;
+
+  --card: #111827; /* gray-900 */
+  --card-foreground: #ffffff;
+
+  --popover: #111827;
+  --popover-foreground: #ffffff;
+
+  --primary: #1e3a8a; /* keep brand consistent */
+  --primary-foreground: #ffffff;
+
+  --secondary: #111827;
+  --secondary-foreground: #ffffff;
+
+  --muted: #111827;
+  --muted-foreground: #e5e7eb;
+
+  --accent: #059669;
+  --accent-foreground: #ffffff;
+
+  --destructive: #b91c1c; /* darker red for dark mode */
+  --destructive-foreground: #ffffff;
+
+  --border: #374151; /* gray-700 */
+  --input: #1f2937;
+  --ring: rgba(30, 58, 138, 0.5);
+
+  --chart-1: #3b82f6;
+  --chart-2: #10b981;
+  --chart-3: #ef4444;
+  --chart-4: #f59e0b;
+  --chart-5: #60a5fa;
+
+  --sidebar: #111827;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #1e3a8a;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #059669;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #374151;
+  --sidebar-ring: rgba(30, 58, 138, 0.5);
+
+  /* Backdrop utilities */
+  --grid-dot: rgba(255, 255, 255, 0.06); /* white dots lighter in dark */
+  --glass-bg: rgba(17, 24, 39, 0.5); /* gray-900 frosted */
+  --glass-border: rgba(55, 65, 81, 0.6); /* gray-700 */
+
+  /* Dark-mode values for neumorphism */
+  --neo-bg: #1d232f; /* deep gray */
+  --neo-shadow-hi: rgba(255, 255, 255, 0.06);
+  --neo-shadow-lo: rgba(0, 0, 0, 0.6);
+  --neo-inner-hi: rgba(255, 255, 255, 0.06);
+  --neo-inner-lo: rgba(0, 0, 0, 0.7);
+}
+
+@theme inline {
+  /* Map Tailwind font tokens to the new Google fonts */
+  --font-sans: var(--font-unbounded);
+  --font-mono: var(--font-source-code-pro);
+
+  /* existing mappings */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  /* Set base typography: Open Sans for body, Work Sans for headings */
+  body {
+    @apply bg-background text-foreground;
+    font-family:
+      var(--font-unbounded), ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+      Noto Sans, Ubuntu, Cantarell, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family:
+      var(--font-unbounded), ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+      Noto Sans, Ubuntu, Cantarell, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  }
+}
+
+@layer utilities {
+  /* Neumorphic utilities (raised and inset) and a site background */
+  .neo-bg {
+    /* soft background with subtle radial vignette; respects dark/light via variables */
+    background-color: var(--neo-bg);
+    background-image: radial-gradient(800px 400px at 20% 0%, rgba(255, 255, 255, 0.35), transparent 60%),
+      radial-gradient(600px 300px at 120% 120%, rgba(0, 0, 0, 0.06), transparent 60%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
+  .neumorphic-surface {
+    background: var(--neo-bg);
+    box-shadow: 12px 12px 24px var(--neo-shadow-lo), -12px -12px 24px var(--neo-shadow-hi);
+    border-radius: var(--radius-lg);
+  }
+
+  .neumorphic-inset {
+    background: var(--neo-bg);
+    box-shadow: inset 8px 8px 16px var(--neo-inner-lo), inset -8px -8px 16px var(--neo-inner-hi);
+    border-radius: var(--radius-lg);
+  }
+
+  .bg-dot-grid {
+    background-image: radial-gradient(var(--grid-dot) 1px, transparent 1px);
+    background-size: 22px 22px;
+    background-position: -1px -1px;
+  }
+
+  .glass-panel {
+    background-color: var(--glass-bg);
+    -webkit-backdrop-filter: saturate(140%) blur(10px);
+    backdrop-filter: saturate(140%) blur(10px);
+    border: 1px solid var(--glass-border);
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 480ms ease, transform 560ms ease;
+    will-change: opacity, transform;
+  }
+  .reveal[data-visible="true"] {
+    opacity: 1;
+    transform: none;
+  }
+}
