@@ -28,7 +28,7 @@
   --destructive: #dc2626; /* red-600 */
   --destructive-foreground: #ffffff;
 
-  --border: #e5e7eb; /* gray-200 */
+  --border: #000000; /* gray-200 */
   --input: #ffffff;
   --ring: rgba(30, 58, 138, 0.5); /* primary ring */
 
