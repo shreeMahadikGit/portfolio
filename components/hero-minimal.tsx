@@ -10,7 +10,7 @@ export function HeroMinimal() {
       <div className="grid items-center gap-8 md:grid-cols-[1.2fr_.8fr] md:gap-10">
         <Reveal as="div" className="space-y-5">
           <h1 className="text-balance text-4xl font-semibold leading-tight md:text-5xl">
-            Building reliable backends and delightful UIs.
+            Building <Highlight type="highlight" palette="yellow" alpha={0.3} strokeWidth={9}> reliable </Highlight>Backends & <Highlight type="highlight" padding={15} palette="yellow" alpha={0.3} strokeWidth={1}>delightful</Highlight> UIs.
           </h1>
           <Reveal as="p" className="text-pretty text-sm text-muted-foreground md:text-base">
             I’m Shree Mahadik, a <Highlight type="box">Full‑Stack Engineer</Highlight> (SDE I @ Fynd/JCP). I design{" "}

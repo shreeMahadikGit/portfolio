@@ -66,7 +66,7 @@ type HighlightProps = {
   iterations?: number
   animationDurationMs?: number
   className?: string
-  palette?: "red" | "blue" | "green" | "amber"
+  palette?: "red" | "blue" | "green" | "amber" | "yellow"
   pen?: "marker" | "pen"
   alpha?: number // only used for marker/highlight fill
 }
@@ -112,6 +112,7 @@ export function Highlight({
       blue: [59, 130, 246], // #3b82f6
       green: [16, 185, 129], // #10b981
       amber: [245, 158, 11], // #f59e0b
+      yellow: [250, 204, 21], // #facd15
     }
     const [r, g, b] = RGB[palette]
     const resolvedType = (pen === "marker" ? "highlight" : type) as RoughAnnotationType

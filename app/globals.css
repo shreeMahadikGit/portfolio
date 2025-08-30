@@ -214,7 +214,7 @@
     background-image: radial-gradient(var(--grid-dot) 1px, transparent 1px);
     background-size: 22px 22px;
     background-position: -1px -1px;
-  }
+  } 
 
   .glass-panel {
     background-color: var(--glass-bg);
