@@ -3,6 +3,7 @@ import { PROFILE } from "@/lib/data"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Reveal, Highlight } from "@/components/ui/interactive" // add subtle animations
+import { downloadResume } from "@/lib/resume-generator"
 
 export function Hero() {
   return (
@@ -32,10 +33,8 @@ export function Hero() {
             <Button asChild className="bg-primary hover:bg-primary/90">
               <a href="#projects">View Projects</a>
             </Button>
-            <Button asChild variant="secondary">
-              <a href="/api/resume" download>
-                Download Resume
-              </a>
+            <Button variant="secondary" onClick={downloadResume}>
+              Download Resume
             </Button>
             <Button asChild variant="outline">
               <a href={PROFILE.github} target="_blank" rel="noreferrer">

@@ -1,5 +1,6 @@
 "use client"
 import { PROFILE } from "@/lib/data"
+import { downloadResume } from "@/lib/resume-generator"
 
 export function SiteFooter() {
   return (
@@ -17,9 +18,9 @@ export function SiteFooter() {
             GitHub
           </a>
           <span className="text-muted-foreground">•</span>
-          <a href="/api/resume" download className="hover:underline">
+          <button onClick={downloadResume} className="hover:underline">
             Download Resume
-          </a>
+          </button>
         </div>
       </div>
     </footer>

@@ -2,6 +2,7 @@
 
 import Image from "next/image"
 import { Highlight, Reveal } from "./ui/interactive"
+import { downloadResume } from "@/lib/resume-generator"
 
 export function HeroMinimal() {
   return (
@@ -13,18 +14,17 @@ export function HeroMinimal() {
           </h1>
           <Reveal as="p" className="text-pretty text-sm text-muted-foreground md:text-base">
             I’m Shree Mahadik, a <Highlight type="box">Full‑Stack Engineer</Highlight> (SDE I @ Fynd/JCP). I design{" "}
-            <Highlight type="underline" alpha="3">scalable microservices</Highlight>, improve web performance with{" "}
+            <Highlight type="underline">scalable microservices</Highlight>, improve web performance with{" "}
             <Highlight type="underline">SSR</Highlight>, and ship{" "}
             <Highlight type="bracket">polished product experiences</Highlight>.
           </Reveal>
           <div className="flex flex-wrap items-center gap-3">
-            <a
-              href="/api/resume"
-              download
+            <button
+              onClick={downloadResume}
               className="inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground hover:opacity-90"
             >
               Download Resume
-            </a>
+            </button>
             <a
               href="mailto:shreemahadik899@gmail.com"
               className="inline-flex h-9 items-center justify-center rounded-md border px-4 text-sm font-medium hover:bg-muted"

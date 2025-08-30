@@ -4,6 +4,7 @@ import Link from "next/link"
 import Image from "next/image" // use logo image in brand </CHANGE>
 import { Button } from "@/components/ui/button"
 import { ThemeToggle } from "@/components/theme-toggle"
+import { downloadResume } from "@/lib/resume-generator"
 
 export function SiteHeader() {
   return (
@@ -27,10 +28,8 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <Button asChild size="sm" variant="secondary">
-            <a href="/api/resume" download>
-              Download Resume
-            </a>
+          <Button size="sm" variant="secondary" onClick={downloadResume}>
+            Download Resume
           </Button>
           <ThemeToggle />
         </div>

@@ -1,10 +1,7 @@
-import type { NextRequest } from "next/server"
 import { PDFDocument, StandardFonts, rgb } from "pdf-lib"
 import { PROFILE, EXPERIENCE, PROJECTS, EDUCATION, SKILLS } from "@/lib/data"
 
-export const dynamic = "force-dynamic"
-
-export async function GET(_req: NextRequest) {
+export async function generateResumePDF(): Promise<Blob> {
   const doc = await PDFDocument.create()
   const page = doc.addPage([595.28, 841.89]) // A4 portrait
   const font = await doc.embedFont(StandardFonts.Helvetica)
@@ -24,6 +21,7 @@ export async function GET(_req: NextRequest) {
     })
     y -= size + 6
   }
+  
   const section = (title: string) => {
     y -= 4
     line(title.toUpperCase(), { size: 12, bold: true })
@@ -88,11 +86,18 @@ export async function GET(_req: NextRequest) {
   }
 
   const bytes = await doc.save()
-  return new Response(bytes, {
-    headers: {
-      "Content-Type": "application/pdf",
-      "Content-Disposition": 'attachment; filename="Shree-Mahadik-Resume.pdf"',
-      "Cache-Control": "no-store",
-    },
-  })
+  return new Blob([bytes], { type: 'application/pdf' })
 }
+
+export function downloadResume() {
+  generateResumePDF().then((blob) => {
+    const url = URL.createObjectURL(blob)
+    const link = document.createElement('a')
+    link.href = url
+    link.download = 'https://drive.google.com/file/d/1IiKXAsnMFBylpFpjNGMWmEpdVPTbZpmv/view?usp=sharing'
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+    URL.revokeObjectURL(url)
+  })
+} 
