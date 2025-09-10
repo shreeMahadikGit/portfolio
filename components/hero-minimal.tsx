@@ -37,7 +37,7 @@ export function HeroMinimal() {
         <div className="mx-auto">
           <div className="relative h-40 w-40 overflow-hidden rounded-xl border sm:h-56 sm:w-56">
             <Image
-              src={"/images/shree-portrait.jpeg"}
+              src={"/images/shree-portrait.png"}
               alt="Developer portrait at a desk with laptop"
               fill
               className="object-cover"

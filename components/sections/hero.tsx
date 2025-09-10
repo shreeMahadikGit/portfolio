@@ -50,7 +50,7 @@ export function Hero() {
           <Reveal delay={140}>
             <div className="relative h-40 w-40 overflow-hidden rounded-xl border sm:h-56 sm:w-56">
               <Image
-                src={"/images/shree-portrait.jpeg"}
+                src={"/images/shree-portrait.png"}
                 alt="Portrait of a person working at a laptop in an office"
                 fill
                 className="object-cover"
