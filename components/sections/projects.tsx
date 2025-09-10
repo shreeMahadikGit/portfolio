@@ -19,9 +19,9 @@ export function Projects() {
                 <CardHeader>
                   <div className="flex flex-col items-start gap-3 sm:flex-row sm:justify-between">
                     <CardTitle className="text-lg">
-                      <Highlight type="box" padding={3} strokeWidth={2}>
-                        {p.name}
-                      </Highlight>
+                        <Highlight type="box" padding={3} strokeWidth={2} animationDurationMs={1500}>
+                          {p.name}
+                        </Highlight>
                     </CardTitle>
                     {p.type ? (
                       <Badge
