@@ -34,7 +34,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${unbounded.variable} ${sourceCodePro.variable} antialiased`} suppressHydrationWarning>
-      <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable} overflow-x-clip`}>
+      <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable} overflow-x-clip`} suppressHydrationWarning>
         <ParallaxGrid />
         <Suspense fallback={null}>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>

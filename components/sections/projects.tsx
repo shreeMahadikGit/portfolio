@@ -17,7 +17,7 @@ export function Projects() {
             <Reveal key={p.name} delay={80 + idx * 80}>
               <Card className="flex flex-col">
                 <CardHeader>
-                  <div className="flex items-start justify-between gap-3">
+                  <div className="flex flex-col items-start gap-3 sm:flex-row sm:justify-between">
                     <CardTitle className="text-lg">
                       <Highlight type="box" padding={3} strokeWidth={2}>
                         {p.name}
